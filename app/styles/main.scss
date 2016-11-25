@@ -1,0 +1,53 @@
+/****************************************************************************************
+						Chứa các file style trên toàn page
+*****************************************************************************************/
+@import "tools/settings";
+@import "tools/mixins";
+
+// bower:scss
+@import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_variables.scss";
+@import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_mixins.scss";
+@import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_normalize.scss";
+@import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_print.scss";
+@import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_scaffolding.scss";
+@import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_type.scss";
+@import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_code.scss";
+@import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_grid.scss";
+@import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_tables.scss";
+@import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_forms.scss";
+@import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_buttons.scss";
+@import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_responsive-embed.scss";
+@import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_utilities.scss";
+@import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_responsive-utilities.scss";
+// endbower
+
+// Base
+@import "tools/font";
+@import "base/base";
+@import "base/form";
+@import "tools/helpers";
+@import "tools/responsive";
+
+// Component
+@import "component/popup";
+@import "component/accordion";
+@import "component/pagination";
+@import "component/loader";
+@import "component/message";
+@import "component/reskin";
+
+// Views
+@import "../views/popup/message/style";
+@import "../views/popup/cropper/style";
+@import "../views/404/style";
+@import "../views/menu/style";
+@import "../views/home/style";
+@import "../views/about/style";
+@import "../views/contact/style";
+
+// Layout
+@import "layout/pagetransition";
+@import "layout/layout";
+
+// Print
+@import "print/all";

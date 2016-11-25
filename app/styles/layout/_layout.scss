@@ -1,0 +1,46 @@
+/****************************************************************************************
+Description: Site layout
+*****************************************************************************************/
+html{
+	-webkit-overflow-scrolling: touch;
+	&.full-screen{
+		overflow-x: hidden;
+		.content-view{
+			@include position(absolute,0px,null,null,0px);
+			width:100%;
+		}
+	}
+}
+body{
+	position: relative;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	>iframe{
+		display: none;
+	}
+}
+.mdl{
+	padding-top:50px;
+	background: #fff;
+}
+// HEADING
+.head1{
+	@include font(null,36px,null);
+	margin:0 0 10px;
+	text-transform: uppercase;
+}
+.head2{
+	@include font(null,24px,null);
+	margin:0 0 10px;
+	text-transform: uppercase;
+}
+.head3{
+	@include font(null,19px,null);
+	margin:0 0 10px;
+	text-transform: uppercase;
+}
+.head4{
+	@include font(null,16px,null);
+	margin:0 0 10px;
+	text-transform: uppercase;
+}

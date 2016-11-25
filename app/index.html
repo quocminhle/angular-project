@@ -1,0 +1,20 @@
+<!doctype html>
+<html class="full-screen">
+<head>
+    @@include('./general/bond-meta.tpl')
+    <base href="/">
+    @@include('./general/bond-head.tpl')
+</head>
+<body class="" >
+
+    @@include('./general/audit-ie.tpl')
+    @@include('./views/menu/mobile.tpl')
+    <div class="view-container" >
+        <div class="content-view" ui-view></div>
+    </div>
+    
+    <!-- <drt-loading-progress></drt-loading-progress> -->
+    <div id="fb-root"></div>
+    @@include('./general/bond-script.tpl')
+</body>
+</html>

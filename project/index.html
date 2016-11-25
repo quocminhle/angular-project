@@ -1,0 +1,58 @@
+<!doctype html>
+<html class="full-screen">
+<head>
+    <meta charset="utf-8">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title ng-bind="pageData.title"></title>
+    <base href="/">
+    <link rel="shortcut icon" href="favicon.ico">
+<!-- Place favicon.ico in the root directory -->
+<link rel="stylesheet" href="styles/vendor.css">
+<link rel="stylesheet" href="styles/main.css">
+</head>
+<body class="{{pageData.className}}" scroll>
+
+    <!--[if lt IE 10]>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+    <div st-mobile-menu class="menu-mob right-side">
+    <ul>
+        <li ng-class="{'active':pageData.menuType==='home'}">
+            <a ui-sref="home">
+                <span translate="MENU_HOME">Home</span>
+            </a>
+        </li>
+        <li ng-class="{'active':pageData.menuType==='about'}">
+            <a ui-sref="about">
+                <span translate="MENU_ABOUT">About Us</span>
+            </a>
+        </li>
+        <li ng-class="{'active':pageData.menuType==='contact'}">
+            <a ui-sref="contact">
+                <span translate="MENU_CONTACT">Contact</span>
+            </a>
+        </li>
+    </ul>
+</div>
+    <div class="view-container" st-page-transition="1,2">
+        <div class="content-view" ui-view></div>
+    </div>
+    <st-loading class="fade-animation" loading-type="#circle-line-spread" ng-if="pageData.loader.loading"></st-loading>
+    <st-loading-progress></st-loading-progress>
+    <div id="fb-root"></div>
+    <script src="scripts/vendor.js"></script>
+<script src="scripts/main.js"></script>
+<!-- Google Analytics
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	for (var i = 0; i < js_setting.google.ga.ids.length; i++) {
+		ga('create', js_setting.google.ga.ids[i], 'auto', {'name': 'gaId'+i});
+		ga('gaId'+i+'.send', 'pageview');
+	};
+</script> -->
+</body>
+</html>

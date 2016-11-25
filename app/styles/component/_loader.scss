@@ -1,0 +1,212 @@
+.fade-animation{
+	&.ng-enter,&.ng-leave{
+		animation: fadeOut .6s ease both;
+	}
+}
+/*********************************************LOADING**************************************/
+#custom-progressbar{
+	@include position(fixed,0,null,null,0,1000);
+	width:100%;
+	>div{
+		height:3px;
+		background: yellow;
+		transition: width 500ms;
+	}
+}
+.cssload-container {
+	width: 100%;
+	height: 100%;
+	position:fixed;
+	background:rgb(31, 54, 53);
+	// text-align: center;
+}
+
+.cssload-double-torus {
+	width: 49px;
+	height: 49px;
+	border: 4px double;
+	border-radius: 50%;
+	position:absolute;
+	top:50%;
+	left:50%;
+	border-color: transparent rgba(240,157,14,0.9) rgba(237,174,14,0.9);
+	animation: cssload-spin 690ms infinite linear;
+}
+
+@keyframes cssload-spin {
+	100%{ transform: rotate(360deg); transform: rotate(360deg); }
+}
+/***************************************************/
+#bar-wave{
+	&.ng-enter,&.ng-leave.ng-leave-active {
+		opacity:0;
+	}
+	&.ng-leave,&.ng-enter.ng-enter-active {
+		opacity:1;
+	}
+	.bar{
+		@include sizeEx(28px,22px);
+		margin:-11px 0 0 -14px;
+	}
+	.bar>div {
+		@include sizeEx(4px,22px);
+		transition:200ms linear opacity;
+		background-color: #fff;
+		display: inline-block;
+		border-radius:3px;
+		animation: barWaveDelay 0.9s infinite ease-in-out;
+		margin-left:-2px;
+	}
+	.bar .rect1 {
+		margin-left: 0;
+		animation-delay: -0.9s;
+	}
+	.bar .rect2 {
+		animation-delay: -0.8s;
+	}
+	.bar .rect3 {
+		animation-delay: -0.7s;
+	}
+	.bar .rect4 {
+		animation-delay: -0.6s;
+	}
+	.bar .rect5 {
+		animation-delay: -0.5s;
+	}
+}
+@keyframes barWaveDelay{
+	0%, 40%, 100% {
+		transform: scaleY(1);
+	}
+	20% {
+		transform: scaleY(1.6);
+	}
+}
+/***************************************************/
+#circle-spread {
+	> div {
+		@include position(absolute,0,null,null,0);
+		@include sizeEx(60px);
+		background-color: #fff;
+		border-radius: 100%;
+		opacity: 0;
+		margin: -30px 0 0 -30px;
+		animation-fill-mode: both;
+		animation: circle-spread-multiple 1s 0s linear infinite;
+		&:nth-child(2) {
+			animation-delay: -0.4s;
+		}
+		&:nth-child(3) {
+			animation-delay: -0.2s;
+		}
+	}
+}
+@keyframes circle-spread-multiple {
+	0% {
+		transform: scale(0);
+		opacity: 0;
+	}
+	5% {
+		opacity: 1;
+	}
+	100% {
+		transform: scale(1);
+		opacity: 0;
+	}
+}
+/***************************************************/
+#circle-line-spread {
+	> div{
+		@include position(absolute,0,null,null,0);
+		@include sizeEx(50px);
+		margin:-25px 0 0 -25px;
+		animation: 1.25s cubic-bezier(0.21, 0.53, 0.56, 0.8) 0s normal none infinite running circle-line-spread;
+		border: 2px solid #fff;
+		border-radius: 100%;
+		&:nth-child(0) {
+			animation-delay: -0.2s;
+		}
+		&:nth-child(1) {
+			animation-delay: 0s;
+		}
+		&:nth-child(2) {
+			animation-delay: 0.2s;
+		}
+		&:nth-child(3) {
+			animation-delay: 0.4s;
+		}
+	}
+}
+@keyframes circle-line-spread {
+	0% {
+		opacity: 1;
+		transform: scale(0.1);
+	}
+	70% {
+		opacity: 0.7;
+		transform: scale(1);
+	}
+	100% {
+		opacity: 0;
+	}
+}
+/***************************************************/
+#hoz-load-bar{
+	@include sizeEx(120px, 14px);
+	margin:-7px 0 0 -60px;
+	div{
+		position:absolute;
+		top:0;
+		background-color:#0f4960;
+		width:14px;
+		height:14px;
+		animation-name:hozloadbar;
+		animation-duration:1.105s;
+		animation-iteration-count:infinite;
+		animation-direction:normal;
+		transform:scale(.3);
+	}
+	.bar1{
+		left:0;
+		animation-delay:0.446s;
+	}
+	.bar2{
+		left:15px;
+		animation-delay:0.5525s;
+	}
+	.bar3{
+		left:30px;
+		animation-delay:0.659s;
+	}
+	.bar4{
+		left:45px;
+		animation-delay:0.7755s;
+	}
+	.bar5{
+		left:60px;
+		animation-delay:0.882s;
+	}
+	.bar6{
+		left:75px;
+		animation-delay:0.9985s;
+	}
+	.bar7{
+		left:90px;
+		animation-delay:1.105s;
+	}
+	.bar8{
+		left:105px;
+		animation-delay:1.2115s;
+	}
+}
+@keyframes hozloadbar{
+	0%{
+		transform:scale(1);
+		background-color:#0f4960;
+	}
+	100%{
+		transform:scale(.3);
+		background-color:rgb(255,255,255);
+	}
+}
+/***************************************************/
